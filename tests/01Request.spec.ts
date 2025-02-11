@@ -20,7 +20,7 @@ test.describe('Network requests status check', () => {
         test(`Check if all network requests return status 200 on ${pageName}`, async ({ page }) => {
             const failedRequests: { url: string; status: number }[] = [];
 
-            await page.goto(`${baseUrl}pages/${pageName}`);
+            await page.goto(`${baseUrl}#/pages/${pageName}`);
             await page.waitForLoadState('networkidle');
 
             page.on('response', response => {

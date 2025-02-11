@@ -11,7 +11,7 @@ export async function login(page: Page) {
         throw new Error('Username or password is not set in .env file!');
     }
 
-    await page.goto(`${process.env.PLAYWRIGHT_BASE_URL}login`);
+    await page.goto(`${process.env.PLAYWRIGHT_BASE_URL}#/login`);
     await page.fill('#login', username);
     await page.fill('#password', password);
     await page.click('.login-button');
