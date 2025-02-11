@@ -1,18 +1,13 @@
 import { test, expect } from '@playwright/test';
 import dotenv from 'dotenv';
+import { login } from '../utils/auth';
 
 dotenv.config();
 
-const baseUrl = 'http://192.168.100.222/#/';
-const username = process.env.PLAYWRIGHT_USERNAME as string;
-const password = process.env.PLAYWRIGHT_PASSWORD as string;
+const baseUrl = process.env.PLAYWRIGHT_BASE_URL as string;
 
 test.beforeEach(async ({ page }) => {
-    await page.goto(`${baseUrl}login`);
-    await page.fill('#login', username);
-    await page.fill('#password', password);
-    await page.click('.login-button');
-    await page.waitForNavigation();
+    await login(page);
 });
 
 const pagesToTest: string[] = [
