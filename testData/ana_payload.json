@@ -1,7 +1,7 @@
 {
     "analysisRangeModel": {
-        "beginDate": "2025-02-11T08:00:00.000Z",
-        "endDate": "2025-02-11T10:00:00.000Z",
+        "beginDate": "2025-02-12T10:00:00.000Z",
+        "endDate": "2025-02-12T12:00:00.000Z",
         "timeUnit": 0,
         "timeUnitChartValue": "seconds",
         "selectedTreeNodeIds": [],
