@@ -15,5 +15,6 @@ export async function login(page: Page) {
     await page.fill('#login', username);
     await page.fill('#password', password);
     await page.click('.login-button');
-    await page.waitForNavigation();
+
+    await page.waitForLoadState('networkidle');
 }
