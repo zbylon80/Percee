@@ -1,19 +1,17 @@
 import { test, expect } from '@playwright/test';
 import { callApi } from '../utils/apiCalls';
 import { updatePayloads } from '../utils/updatePayloads';
+import { normalizeDateTime } from '../utils/dateUtils';
 import fs from 'fs';
-
-updatePayloads();
 
 interface DataEntry {
     DateTime: string;
     Value: number;
 }
 
-function normalizeDateTime(dateTime: string): string {
-    const date = new Date(dateTime);
-    return date.toISOString().replace('Z', '');
-}
+test.beforeAll(() => {
+    updatePayloads();
+});
 
 test('Validate Algorithms and Analysis API responses', async ({ page, request }) => {
     const responseAlg = await callApi(page, request, 'alg_payload.json', 'algorithms/validateExecution');
@@ -31,10 +29,12 @@ test('Validate Algorithms and Analysis API responses', async ({ page, request })
     let extractedDataAna: DataEntry[] = [];
 
     if (responseAnaBody.data && responseAnaBody.data.length > 0) {
-        extractedDataAna = responseAnaBody.data[0].serieValues.map((entry: any) => ({
-            DateTime: normalizeDateTime(entry.date),
-            Value: entry.value,
-        }));
+        extractedDataAna = responseAnaBody.data.flatMap((serie: any) =>
+            serie.serieValues.map((entry: any) => ({
+                DateTime: normalizeDateTime(entry.date),
+                Value: entry.value,
+            }))
+        );
     }
 
     fs.writeFileSync('resultFiles/extracted_result_alg.json', JSON.stringify(extractedDataAlg, null, 2), 'utf-8');
