@@ -1,12 +1,12 @@
 {
     "analysisRangeModel": {
-        "beginDate": "2025-02-12T10:00:00.000Z",
-        "endDate": "2025-02-12T12:00:00.000Z",
+        "beginDate": "2025-02-14T03:00:00.000Z",
+        "endDate": "2025-02-14T05:00:00.000Z",
         "timeUnit": 0,
-        "timeUnitChartValue": "seconds",
         "selectedTreeNodeIds": [],
         "selectedDevices": [],
-        "aggregation": "lastvalue"
+        "aggregationType": 0,
+        "isIncrementalMode": true
     },
     "chartType": "column",
     "devicesSelection": [
@@ -18,7 +18,8 @@
                 "JB - EE - Test - Licznik bilansujący EE"
             ],
             "attributesNames": [
-                "EE_POW"
+                "EE_POW",
+                "HOME_POW"
             ]
         }
     ],
