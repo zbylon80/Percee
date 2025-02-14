@@ -1,7 +1,7 @@
 {
     "analysisRangeModel": {
-        "beginDate": "2025-02-14T03:00:00.000Z",
-        "endDate": "2025-02-14T05:00:00.000Z",
+        "beginDate": "2025-02-14T04:00:00.000Z",
+        "endDate": "2025-02-14T06:00:00.000Z",
         "timeUnit": 0,
         "selectedTreeNodeIds": [],
         "selectedDevices": [],

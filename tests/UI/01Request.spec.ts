@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import dotenv from 'dotenv';
-import { login } from '../utils/auth';
+import { login } from '../../utils/auth';
 
 dotenv.config();
 
