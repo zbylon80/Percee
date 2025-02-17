@@ -1,11 +1,11 @@
 import { test } from '@playwright/test';
-import { updatePayloads } from '../../utils/updatePayloads';
+import { updatePayloadsForRawRecords } from '../../utils/upgradePayloads';
 import { validateApiResponses } from '../../utils/validateApi';
 
 const algFileName = '01alg_payload';
 const anaFileName = '01ana_payload';
 
-test.beforeAll(() => updatePayloads(
+test.beforeAll(() => updatePayloadsForRawRecords(
     algFileName, 
     anaFileName
 ));
