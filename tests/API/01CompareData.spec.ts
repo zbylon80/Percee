@@ -7,8 +7,7 @@ const anaFileName = '01ana_payload';
 
 test.beforeAll(() => updatePayloads(
     algFileName, 
-    anaFileName,
-    'getDeviceRawRecords'
+    anaFileName
 ));
 
 test('Validate Algorithms and Analysis API responses - getDeviceRawRecords', async ({ page, request }) => 
