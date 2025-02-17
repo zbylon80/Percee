@@ -8,7 +8,7 @@ export const updatePayloads = (testType: string, algFile: string, anaFile: strin
     const midnight = -new Date().getUTCHours();
 
     switch (testType) {
-        case 'rawRecords':
+        case '15m':
             updateJsonFile(path.resolve(__dirname, `../testData/${algFile}.json`), (data) => {
                 data.body = data.body
                     .replace(/sDateBegin:\s*'[^']+'/g, `sDateBegin:'${adjustDate(0, -2, 'sql')}'`)
@@ -23,7 +23,7 @@ export const updatePayloads = (testType: string, algFile: string, anaFile: strin
             });
             break;
 
-        case 'aggregatedRecords':
+        case '1w':
             updateJsonFile(path.resolve(__dirname, `../testData/${algFile}.json`), (data) => {
                 data.body = data.body
                     .replace(/sDateBegin:\s*'[^']+'/g, `sDateBegin:'${adjustDate(previousMondayOffset, midnight, 'sql')}'`)

@@ -6,7 +6,7 @@ const algFileName = '02alg_payload';
 const anaFileName = '02ana_payload';
 
 test.beforeAll(() => updatePayloads(
-    'aggregatedRecords',
+    '1w',
     algFileName, 
     anaFileName
 ));
