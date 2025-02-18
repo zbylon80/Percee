@@ -1,0 +1,4 @@
+{
+    "body": "def\n{\n  result:null,\n  data:null,\n  sDateBegin:'2025-02-18 09:00:00',\n  sDateEnd:'2025-02-18 11:00:00',\n  sAttrNames:['HOME_POW', 'EE_POW'],\n  sFullIndentifiers:['JBM1TESTEE00ECA0', 'O0W014660001ECA0']\n}\n{   \nset(result, getDeviceRawRecords(sAttrNames, sFullIndentifiers, sDateBegin, sDateEnd, true, 0));\nreturn(result[0]);\n}",
+    "inputFrame": null
+}

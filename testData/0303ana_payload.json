@@ -1,0 +1,30 @@
+{
+    "analysisRangeModel": {
+        "beginDate": "2025-02-09T23:00:00.000Z",
+        "endDate": "2025-02-15T23:00:00.000Z",
+        "timeUnit": 4,
+        "aggregationType": 0,
+        "isIncrementalMode": false
+    },
+    "chartType": "column",
+    "devicesSelection": [
+        {
+            "fullIdentifiers": [
+                "O0Z018200001ECA0",
+                "O0W014660001ECA0"
+            ],
+            "devicesNames": [
+                "Licznik EE - OKAIDI - 1820"
+            ],
+            "attributesNames": [
+                "VoltageL1"
+            ]
+        }
+    ],
+    "treeNodeIds": [
+        6
+    ],
+    "treeNodeNames": [
+        "OKAIDI"
+    ]
+}

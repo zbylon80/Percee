@@ -1,14 +1,12 @@
 {
     "analysisRangeModel": {
-        "beginDate": "2025-02-14T04:00:00.000Z",
-        "endDate": "2025-02-14T06:00:00.000Z",
-        "timeUnit": 0,
-        "selectedTreeNodeIds": [],
-        "selectedDevices": [],
-        "aggregationType": 0,
-        "isIncrementalMode": true
+        "beginDate": "2025-02-09T23:00:00.000Z",
+        "endDate": "2025-02-15T23:00:00.000Z",
+        "timeUnit": 4,
+        "aggregationType": 5,
+        "isIncrementalMode": false
     },
-    "chartType": "column",
+    "chartType": "bar",
     "devicesSelection": [
         {
             "fullIdentifiers": [

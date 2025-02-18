@@ -1,0 +1,32 @@
+{
+    "analysisRangeModel": {
+        "beginDate": "2025-02-18T08:00:00.000Z",
+        "endDate": "2025-02-18T10:00:00.000Z",
+        "timeUnit": 0,
+        "selectedTreeNodeIds": [],
+        "selectedDevices": [],
+        "aggregationType": 0,
+        "isIncrementalMode": true
+    },
+    "chartType": "column",
+    "devicesSelection": [
+        {
+            "fullIdentifiers": [
+                "JBM1TESTEE00ECA0"
+            ],
+            "devicesNames": [
+                "JB - EE - Test - Licznik bilansujący EE"
+            ],
+            "attributesNames": [
+                "EE_POW",
+                "HOME_POW"
+            ]
+        }
+    ],
+    "treeNodeIds": [
+        687744634698
+    ],
+    "treeNodeNames": [
+        "JB-ENERGIA"
+    ]
+}
