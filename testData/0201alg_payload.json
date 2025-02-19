@@ -1,4 +1,4 @@
 {
-    "body": "def\n{\n  result:null,\n  sDateBegin:'2025-02-10 00:00:00',\n  sDateEnd:'2025-02-16 00:00:00',\n  sAttrNames:['EE_POW'],\n  sFullIndentifiers:['JBM1TESTEE00ECA0'],\n  interval: '1w',\n  aggregation: 'lastvalue',\n}\n{   \nset(result, getDeviceAggregatedRecords(sAttrNames, sFullIndentifiers, sDateBegin, sDateEnd, interval, aggregation));\nreturn(result[0]);\n}",
+    "body": "def\n{\n  result:null,\n  sDateBegin:'2025-02-10 00:00:00',\n  sDateEnd:'2025-02-16 00:00:00',\n  sAttrNames:['EE_POW'],\n  sFullIndentifiers:['JBM1TESTEE00ECA0'],\n  interval: '1w',\n  aggregation: 'lastvalue',\n}\n{   \nset(result, getDeviceAggregatedRecords(sAttrNames, sFullIndentifiers, sDateBegin, sDateEnd, interval, aggregation));\nreturn(result);\n}",
     "inputFrame": null
 }

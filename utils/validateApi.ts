@@ -20,15 +20,34 @@ export async function validateApiResponses(
 
     const responseAlg = await callApi(page, request, algPayloadFile, 'algorithms/validateExecution');
     const responseAlgBody = await responseAlg.json();
+    
+    console.log('Response Alg Body:', responseAlgBody);
 
     const responseAna = await callApi(page, request, anaPayloadFile, 'analysis/getValues');
     const responseAnaBody = await responseAna.json();
 
-    const parsedResultAlg = JSON.parse(responseAlgBody.result) as { Data: DataEntry[] };
-    const extractedDataAlg = parsedResultAlg.Data.map(({ DateTime, Value }: DataEntry) => ({
-        DateTime: normalizeDateTime(DateTime),
-        Value
-    }));
+    console.log('Response Ana Body:', responseAnaBody);
+
+    const parsedResultAlg = JSON.parse(responseAlgBody.result);
+    console.log('Parsed Result Alg:', parsedResultAlg);
+
+    let extractedDataAlg: DataEntry[] = [];
+
+    if (Array.isArray(parsedResultAlg)) {
+        extractedDataAlg = parsedResultAlg.flatMap(entry => 
+            entry.Data ? entry.Data.map(({ DateTime, Value }: DataEntry) => ({
+                DateTime: normalizeDateTime(DateTime),
+                Value
+            })) : []
+        );
+    } else if (parsedResultAlg.Data) {
+        extractedDataAlg = parsedResultAlg.Data.map(({ DateTime, Value }: DataEntry) => ({
+            DateTime: normalizeDateTime(DateTime),
+            Value
+        }));
+    } else {
+        throw new Error("Unexpected response format: missing 'Data' field.");
+    }
 
     let extractedDataAna: DataEntry[] = [];
 
