@@ -1,28 +1,5 @@
-import path from 'path';
-import { adjustDate } from './dateUtils';
-import { updateJsonFile } from './jsonUtils';
 import { getPreviousWeekDates } from './dateUtils';
-
-const updateAlgFiles = (algFiles: string[], sDateBeginOffsetDays: number, sDateBeginOffsetHours: number, sDateEndOffsetDays: number, sDateEndOffsetHours: number) => {
-    algFiles.forEach((algFile) => {
-        updateJsonFile(path.resolve(__dirname, `../testData/${algFile}.json`), (data) => {
-            data.body = data.body
-                .replace(/sDateBegin:\s*'[^']+'/g, `sDateBegin:'${adjustDate(sDateBeginOffsetDays, sDateBeginOffsetHours, 'sql')}'`)
-                .replace(/sDateEnd:\s*'[^']+'/g, `sDateEnd:'${adjustDate(sDateEndOffsetDays, sDateEndOffsetHours, 'sql')}'`);
-        });
-    });
-};
-
-const updateAnaFiles = (anaFiles: string[], beginDateOffsetDays: number, beginDateOffsetHours: number, endDateOffsetDays: number, endDateOffsetHours: number) => {
-    anaFiles.forEach((anaFile) => {
-        updateJsonFile(path.resolve(__dirname, `../testData/${anaFile}.json`), (data) => {
-            Object.assign(data.analysisRangeModel, {
-                beginDate: adjustDate(beginDateOffsetDays, beginDateOffsetHours, 'iso'),
-                endDate: adjustDate(endDateOffsetDays, endDateOffsetHours, 'iso'),
-            });
-        });
-    });
-};
+import { updateAlgFiles, updateAnaFiles } from './jsonUtils';
 
 export const updatePayloads = (testType: string, algFiles: string[], anaFiles: string[]) => {
     const { previousMondayOffset, lastSundayOffset } = getPreviousWeekDates();
